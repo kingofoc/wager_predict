@@ -47,7 +47,7 @@ export default function AddGames() {
  return (
   <>
   <div>
-   <h1 className="text-xl font-black">Add Prediction</h1>
+   <p className="text-xl font-black">Add Prediction</p>
   </div>
    <div className="mt-3">
     <input type="text" value={formData.country} onChange={handleChange} name="country" id="" placeholder="Country" className="rounded-md my-1 p-3 w-full shadow-md outline-black/80 font-bold"/>
@@ -60,7 +60,7 @@ export default function AddGames() {
    </div>
 
    <div className="mt-5">
-    <input type="button" onClick={handleSubmit} value="Add Game" className="w-full rounded-md p-3 bg-amber-500 font-bold "/>
+    <button type="button" onClick={handleSubmit} value="Add Game" className="w-full rounded-md p-3 bg-amber-500 font-bold ">Add Game</button>
    </div>
   </>
  )
