@@ -1,6 +1,6 @@
 import { model, Schema, models } from "mongoose";
 
-const tipsSchema = new Schema({
+const TipSchema = new Schema({
  country: {
   type: String,
   required: true
@@ -26,9 +26,20 @@ const tipsSchema = new Schema({
   required: true
  },
  expertTip: {
-  type: String,
+  type: [String],
   required: true
- }
-});
+ },
+ matchDate: {
+  type: Date,
+  required: true
+ },
+},
+{ timestamps: true }
+);
 
-export const tips = models.tips || model('tips', tipsSchema);
+TipSchema.index(
+ { matchDate: 1 },
+ { expireAfterSeconds: 60 * 60 * 24 * 3 }
+)
+
+export const Tip = models.Tip || model('Tip', TipSchema);

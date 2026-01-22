@@ -10,7 +10,8 @@ export default function AddGames() {
   away: "",
   homeScore: "",
   awayScore: "",
-  expertTip: ""
+  expertTip: "",
+  matchDate: ""
  });
 
  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +39,8 @@ export default function AddGames() {
     away: "",
     homeScore: "",
     awayScore: "",
-    expertTip: ""
+    expertTip: "",
+    matchDate: ""
    });
   } else {
    alert(data.error);
@@ -58,6 +60,7 @@ export default function AddGames() {
     <input type="text" value={formData.homeScore} onChange={handleChange} name="homeScore" id="" placeholder="Predict Home Score" className=" rounded-md my-1 p-3 w-full shadow-md outline-black/80 font-bold"/>
     <input type="text" value={formData.awayScore} onChange={handleChange} name="awayScore" id="" placeholder="Predict Away Score" className="rounded-md my-1 p-3 w-full shadow-md outline-black/80 font-bold"/>
     <input type="text" value={formData.expertTip} onChange={handleChange} name="expertTip" id="" placeholder="Tip" className="rounded-md my-1 p-3 w-full shadow-md outline-black/80 font-bold"/>
+    <input type="datetime-local" value={formData.matchDate} onChange={handleChange} name="matchDate" id="" className="rounded-md my-1 p-3 w-full shadow-md outline-black/80 font-bold"/>
    </div>
 
    <div className="mt-5">
