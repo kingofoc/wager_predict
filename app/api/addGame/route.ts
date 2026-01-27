@@ -5,9 +5,9 @@ import { Tip } from "@/models/tips";
 export async function POST(request: NextRequest) {
  await connectDb();
 
- const { country, league, home, away, homeScore, awayScore, expertTip, matchDate } = await request.json();
+ const { country, league, home, away, homeScore, awayScore, expertTip, rHomeScore, rAwayScore, matchDate } = await request.json();
 
- if(!country || !league || !home || !away || !homeScore || !awayScore || !expertTip || !matchDate) {
+ if(!country || !league || !home || !away || !homeScore || !awayScore || !expertTip || !rHomeScore || rAwayScore || !matchDate) {
   return NextResponse.json({ error: "Please input teams" }, { status: 400 });
  }
 
@@ -23,6 +23,8 @@ export async function POST(request: NextRequest) {
   homeScore,
   awayScore,
   expertTip: expertTipArray,
+  rHomeScore,
+  rAwayScore,
   matchDate: new Date(matchDate)
  })
 

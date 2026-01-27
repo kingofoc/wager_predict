@@ -1,14 +1,16 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import connectDb from "@/lib/mongodb";
+import { Tip } from "@/models/tips";
 
-export async function POST(request: NextRequest) {
+export async function GET() {
  await connectDb();
 
- const { teamA, teamB } = await request.json();
+ const matches = await Tip.find({})
+  .sort({ created: -1 })
+  .lean()
 
- if(!teamA && !teamB) {
-  return NextResponse.json({ error: "Please input teams" }, { status: 400 });
- }
-
- return NextResponse.json({ success: true })
+ return NextResponse.json({
+  matches,
+  success: true 
+ })
 }

@@ -11,6 +11,8 @@ export default function AddGames() {
   homeScore: "",
   awayScore: "",
   expertTip: "",
+  rHomeScore: "",
+  rAwayScore: "",
   matchDate: ""
  });
 
@@ -40,6 +42,8 @@ export default function AddGames() {
     homeScore: "",
     awayScore: "",
     expertTip: "",
+    rHomeScore: "",
+    rAwayScore: "",
     matchDate: ""
    });
   } else {
@@ -60,6 +64,8 @@ export default function AddGames() {
     <input type="text" value={formData.homeScore} onChange={handleChange} name="homeScore" id="" placeholder="Predict Home Score" className=" rounded-md my-1 p-3 w-full shadow-md outline-black/80 font-bold"/>
     <input type="text" value={formData.awayScore} onChange={handleChange} name="awayScore" id="" placeholder="Predict Away Score" className="rounded-md my-1 p-3 w-full shadow-md outline-black/80 font-bold"/>
     <input type="text" value={formData.expertTip} onChange={handleChange} name="expertTip" id="" placeholder="Tip" className="rounded-md my-1 p-3 w-full shadow-md outline-black/80 font-bold"/>
+    <input type="text" value={formData.rHomeScore} onChange={handleChange} name="rHomeScore" id="" placeholder="Result Home Score" className="rounded-md my-1 p-3 w-full shadow-md outline-black/80 font-bold"/>
+    <input type="text" value={formData.rAwayScore} onChange={handleChange} name="rAwayScore" id="" placeholder="Result Away Score" className="rounded-md my-1 p-3 w-full shadow-md outline-black/80 font-bold"/>
     <input type="datetime-local" value={formData.matchDate} onChange={handleChange} name="matchDate" id="" className="rounded-md my-1 p-3 w-full shadow-md outline-black/80 font-bold"/>
    </div>
 

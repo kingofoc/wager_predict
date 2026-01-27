@@ -29,12 +29,17 @@ const TipSchema = new Schema({
   type: [String],
   required: true
  },
+ rHomeScore: {
+  type: Number,
+ },
+ rAwayScore: {
+  type: Number
+ },
  matchDate: {
   type: Date,
   required: true
  },
-},
-{ timestamps: true }
+}
 );
 
 TipSchema.index(
